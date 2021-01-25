@@ -1,4 +1,3 @@
-console.log('from js folder')
 const weatherForm = document.querySelector('button')
 const search = document.querySelector('input')
 const errorMessage = document.querySelector('#error')
