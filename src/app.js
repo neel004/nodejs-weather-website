@@ -49,6 +49,7 @@ app.get('/help/*', (req, res) => {
         error: 'Help Article not found'
     })
 })
+
 app.get('/weather', (req, res) => {
     if (!(req.query.address || (req.query.lon || req.query.lat))) {
         return res.send({
@@ -64,7 +65,7 @@ app.get('/weather', (req, res) => {
                 })
             }else{
                 console.log(latitude + ' ' + longitude)
-                getAddress.getAddress(latitude,longitude,(error, {latitude,longitude,city,description,temperature})=>{
+                getAddress.getAddress(latitude,longitude,(error, {country_code,latitude,longitude,city,description,temperature})=>{
                     if(error){
                         return res.send({
                             error
@@ -73,6 +74,7 @@ app.get('/weather', (req, res) => {
                         return res.send({
                             latitude,
                             longitude,
+                            country: country_code,
                             city,
                             description,
                             temperature
@@ -91,7 +93,6 @@ app.get('/weather', (req, res) => {
                 })
             }else{
                 return res.send({
-                    
                     latitude,
                     longitude,
                     city,
