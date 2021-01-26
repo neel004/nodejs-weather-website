@@ -5,6 +5,8 @@ const getWeather = require('./utils/getWeather')
 const getAddress = require('./utils/getAddress')
 
 const app = express()
+const port = process.env.PORT || 3000
+
 
 // Define paths for express config
 const public_dir_path = path.join(__dirname, '../public') //pointing to public content
@@ -109,6 +111,6 @@ app.get('*', (req, res) => {
         error: 'Page Not found'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
