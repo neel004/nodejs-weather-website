@@ -64,7 +64,7 @@ app.get('/weather', (req, res) => {
                     error
                 })
             }else{
-                console.log(latitude + ' ' + longitude)
+                //console.log(latitude + ' ' + longitude)
                 getAddress.getAddress(latitude,longitude,(error, {country_code,latitude,longitude,city,description,temperature})=>{
                     if(error){
                         return res.send({

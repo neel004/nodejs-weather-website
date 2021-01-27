@@ -18,7 +18,7 @@ weatherForm.addEventListener('click',(e)=>{
         }
         else{
             errorMessage.textContent=''
-            successMessage.textContent = 'latitude and longitudes of '+ data.city+',' + data.country+' are : ' + data.latitude +'&' + data.longitude +' and the temperature is '+ data.temperature +' degree celcius. Weather is '+ data.description
+            successMessage.textContent = 'latitude and longitudes of '+ data.city+',' + data.country+' are : ' + data.latitude +' & ' + data.longitude +' and '+"\n"+'the temperature is '+ data.temperature +' degree celcius. Weather is '+ data.description 
             console.log(data)
             console.log(data.longitude)
         }
